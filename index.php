@@ -1,5 +1,7 @@
 <?php
 //TODO: COMMENT THINGS, AND MAKE EVERYTHING VALID HTML ALL THE TIME
+//Fix hardcoded things, make 5 stores, fix css, (nostly done)
+//Change display to portable, and fix so it can work in move too 
 session_start();
 require_once("head.php");
 require_once("display.php");

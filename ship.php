@@ -5,7 +5,7 @@ require_once("head.php");
 //STUFF AT THE TOP
 echo "<div id='UI'>";
 $StoreNumber = filter_var($_GET["store"], FILTER_SANITIZE_NUMBER_INT);
-if (filter_var($StoreNumber,FILTER_VALIDATE_INT) && $StoreNumber > 0 && $StoreNumber < 5){
+if (filter_var($StoreNumber,FILTER_VALIDATE_INT) && $StoreNumber > 0 && $StoreNumber <= $amountOfStores ){
 	unset($_SESSION['store'.$StoreNumber]);
 	$_SESSION['store'.$StoreNumber] = array();
 	require_once("UI.php");

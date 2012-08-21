@@ -1,10 +1,9 @@
 <?php
 if(!isset($_SESSION['warehouse'])){
 	$_SESSION['warehouse'] = array();
-	$_SESSION['store1'] = array();
-	$_SESSION['store2'] = array();
-	$_SESSION['store3'] = array();
-	$_SESSION['store4'] = array();
+ 	for ($StoreNumber=1; $StoreNumber <= $amountOfStores; $StoreNumber++) { 
+  		$_SESSION['store'.$StoreNumber] = array();
+ 	}
 }	
 
 //DISPLAY WAREHOUSE STACK
@@ -17,11 +16,11 @@ foreach ($WarehouseStack as $key => $value) {
 	echo "</td></tr>";
 }
 echo "</table><b>Warehouse Stack</b><br>";
-echo  "Crates on stack: ".count($_SESSION['warehouse'])."<br><br>";
+echo  "Crates: ".count($_SESSION['warehouse'])."<br>";
 echo "</div>";
 
 //DISPLAY SHOP STACKS
-for ($StoreNumber=1; $StoreNumber < 5; $StoreNumber++) { 
+for ($StoreNumber=1; $StoreNumber <= $amountOfStores; $StoreNumber++) { 
 	$Storename = "store".$StoreNumber;
 	echo "<div id='".$Storename."'>";
 	$StoreStack = array_reverse($_SESSION[$Storename]);
@@ -34,11 +33,11 @@ for ($StoreNumber=1; $StoreNumber < 5; $StoreNumber++) {
 	}
 	echo "</table>";
 	echo "<b>Store " . $StoreNumber . " Stack</b><br>";
-	echo  "Crates on stack: ".count($_SESSION['store'.$StoreNumber])."<br>";
+	echo  "Crates: ".count($_SESSION['store'.$StoreNumber])."<br>";
 	if (count($_SESSION['store'.$StoreNumber])>0){
 		echo "<a href='ship.php?store=".$StoreNumber."'>Ship This Stack</a><br>";
 	}else{
-		echo "<font color='#A0A0A0'>Ship This Stack</font><br>";
+		echo "<font color='#A0A0A0'>Ship</font><br>";
 	}	
 	echo "</div>";
 }

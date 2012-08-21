@@ -1,4 +1,4 @@
-<?php
+<?php/*
 session_start();
 require_once("head.php");
 //STUFF AT THE TOP
@@ -8,8 +8,7 @@ $StoreStack2 = filter_var($_POST["StoreStack2"], FILTER_SANITIZE_NUMBER_INT);
 
 if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
 	if($StoreStack1 and $StoreStack2){
-		if (filter_var($StoreStack1,FILTER_VALIDATE_INT) && $StoreStack1 > 0 && $StoreStack1 < 5 && filter_var($StoreStack2,FILTER_VALIDATE_INT) && $StoreStack2 > 0 && $StoreStack2 < 5){
-			$crate = array_pop($_SESSION['warehouse']);
+		if (filter_var($StoreStack1,FILTER_VALIDATE_INT) && $StoreStack1 > 0 && $StoreStack1 <= $amountOfStores && filter_var($StoreStack2,FILTER_VALIDATE_INT) && $StoreStack2 > 0 && $StoreStack2 <= $amountOfStores){
 			echo $crate . " crate removed<br>";
 			$StoreStack1 = "store".$StoreStack1;
 			$StoreStack2 = "store".$StoreStack2;
@@ -21,11 +20,11 @@ if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
 		}
 	}else{
 		echo "<form method='post' action='move.php'>";
-		for ($x=1; $x < 5; $x++) { 
-			if(count($_SESSION['store'.$x])<10){ 
+		for ($x=1; $x <= $amountOfStores; $x++) { 
+			if(count($_SESSION['store'.$x])<$maxWarehouseSize){ 
 				echo "Store ".$x.": <input type='radio' value='".$x."' name='StoreStack1'>"; 
 			}
-			if(count($_SESSION['store'.$x])<9){ 
+			if(count($_SESSION['store'.$x])<($maxWarehouseSize-1){ 
 				echo "<input type='radio' value='".$x."' name='StoreStack2'>";
 			}
 			echo "</br>";
@@ -39,5 +38,5 @@ if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
 echo "</div>";
 
 require_once("display.php");
-require_once("foot.php");
+require_once("foot.php");*/
 ?>

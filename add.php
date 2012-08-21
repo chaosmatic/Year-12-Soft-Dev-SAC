@@ -5,7 +5,7 @@ require_once("head.php");
 echo "<div id='UI'>";
 if($_POST['name']==null){
 	//DISPLAYS FORM
-	if (count($_SESSION['warehouse']) == 4){
+	if (count($_SESSION['warehouse']) == $maxWarehouseSize -1){
 		echo "<b>WARNING: THERE IS ONLY ONE SPACE LEFT ON THE STACK!</b>";
 	}
 	echo "<form method='post' action='add.php'>";

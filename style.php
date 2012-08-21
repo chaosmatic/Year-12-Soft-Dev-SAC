@@ -1,3 +1,6 @@
+<?php
+?>
+<STYLE type="text/css">
 html, body {
 	background-color: #f0f0f0;
 	margin: 0;
@@ -12,13 +15,28 @@ html, body {
 	padding-top: 20px;
 
 }
-#Warehouse {
-	width:16%;
-	position:absolute;
-	bottom:50px;
-	left:2%;
-	overflow:hidden;
-}
+
+<?php
+
+$tablewidth = 95;
+$width = floor(100/$amountOfStores)-9;
+for ($i=1; $i <= $amountOfStores; $i++) {
+	$left =  (floor(100/($amountOfStores)+1))*$i-(5*$i);
+	echo "#store";
+	echo $i;
+	echo " {\n";
+	echo "width:";
+	echo $width;
+	echo "%;\n";
+	echo "position:absolute;\n";
+	echo "bottom:50px;\n";
+	echo "left:";
+	echo $left;
+	echo "%;\n";
+	echo "overflow:hidden;\n";
+	echo "}\n";
+
+}/*
 #store1 {
 	width:16%;
 	position:absolute;
@@ -47,6 +65,15 @@ html, body {
 	bottom:50px;
 	left:82%;
 	overflow:hidden;
+}*/
+?>
+
+#Warehouse {
+	width:<?php echo $width; ?>%;
+	position:absolute;
+	bottom:50px;
+	left:2%;
+	overflow:hidden;
 }
 
 #WarehouseCell {
@@ -56,7 +83,7 @@ html, body {
 }
 
 table {
-	width:185px;
+	width:<?php echo $tablewidth; ?>%;
 	table-layout:fixed;
 	border-collapse:separate; 
 }
@@ -110,3 +137,4 @@ td.WarehouseCell {
 	width:100%;
 	font-size: 150%;
 }
+</STYLE>
