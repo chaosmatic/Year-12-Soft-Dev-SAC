@@ -8,6 +8,14 @@ html, body {
   font-family: "Verdana"; 
 
 }
+/*debugging*/
+#wall {
+	position: absolute;
+	left: 1024px;
+	width: 10px;
+	height: 760px;
+	background-color: #000;
+}
 
 #container1 {
 	float:left;
@@ -18,10 +26,10 @@ html, body {
 
 <?php
 
-$tablewidth = 95;
+$tablewidth = 100;
 $width = floor(100/$amountOfStores)-9;
 for ($i=1; $i <= $amountOfStores; $i++) {
-	$left =  (floor(100/($amountOfStores)+1))*$i-(5*$i);
+	$left =  (floor(100/($amountOfStores)+1))*$i-floor(3.5*$i);
 	echo "#store";
 	echo $i;
 	echo " {\n";
@@ -122,6 +130,7 @@ td.WarehouseCell {
 	background-color: #F0F0F0;
 	border: 5px solid #8E6D4C;
 	height:40px;
+	font-size: 65%;
 }
 
 #AddCrate1 {
@@ -129,6 +138,7 @@ td.WarehouseCell {
 	background-color: #F0F0F0;
 	border: 5px solid #724E2B;
 	height:40px;
+	font-size: 65%;
 }
 
 #UI {

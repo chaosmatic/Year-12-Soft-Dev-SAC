@@ -9,7 +9,7 @@ if($_POST['name']==null){
 		echo "<b>WARNING: THERE IS ONLY ONE SPACE LEFT ON THE STACK!</b>";
 	}
 	echo "<form method='post' action='add.php'>";
-	echo "Name of crate: <input type='text' size='15' maxlength='15' name='name'><br>";
+	echo "Name of crate: <input type='text' size='10' maxlength='9' name='name'><br>";
 	echo "<input type='submit' value='ADD' name='submit'></form>";
 	echo "<a href='index.php'>BACK</a>";
 }else{
