@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once("head.php");
-//STUFF AT THE TOP
 echo "<div id='UI'>";
 if($_POST['name']==null){
 	//DISPLAYS FORM

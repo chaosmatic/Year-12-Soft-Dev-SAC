@@ -1,4 +1,4 @@
-<?php
+<?php //DISPLAYS LINKS
 if(count($_SESSION['warehouse'])>0){
 	echo "<a href='move.php'>Move from warehouse stack<br></a>";
 }

@@ -1,4 +1,4 @@
-<?php
+<?php //TAKES CARE OF ALL THE CRATES
 if(!isset($_SESSION['warehouse'])){
 	$_SESSION['warehouse'] = array();
  	for ($StoreNumber=1; $StoreNumber <= $amountOfStores; $StoreNumber++) { 
@@ -26,7 +26,7 @@ for ($StoreNumber=1; $StoreNumber <= $amountOfStores; $StoreNumber++) {
 	$StoreStack = array_reverse($_SESSION[$Storename]);
 	
 	echo "<table class='StoreTable'>";
-	if ($move){
+	if ($move){ //DISPLAY THE CHECK BOXES
 		if(count($_SESSION['store'.$StoreNumber])<($maxStoreSize -1)){ 
 			echo "<tr><td id='AddCrate2'>";
 			echo "Add Crate 2: <input type='radio' value='".$StoreNumber."' name='StoreStack2'><br>";
@@ -46,7 +46,7 @@ for ($StoreNumber=1; $StoreNumber <= $amountOfStores; $StoreNumber++) {
 	echo "</table>";
 	echo "<b>Store " . $StoreNumber . "</b><br>";
 	echo  "Crates: ".count($_SESSION['store'.$StoreNumber])."<br>";
-	if (count($_SESSION['store'.$StoreNumber])>0){
+	if (count($_SESSION['store'.$StoreNumber])>0 and !$move){
 		echo "<a href='ship.php?store=".$StoreNumber."'>Ship</a><br>";
 	}else{
 		echo "<font color='#A0A0A0'>Ship</font><br>";
