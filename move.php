@@ -10,26 +10,36 @@ if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
 	if($StoreStack1 and $StoreStack2){
 		if (filter_var($StoreStack1,FILTER_VALIDATE_INT) && $StoreStack1 > 0 && $StoreStack1 <= $amountOfStores && filter_var($StoreStack2,FILTER_VALIDATE_INT) && $StoreStack2 > 0 && $StoreStack2 <= $amountOfStores){
 			//MOVE
-			$crate = array_pop($_SESSION['warehouse']);
 			$StoreStack1 = "store".$StoreStack1;
 			$StoreStack2 = "store".$StoreStack2;
-			array_push($_SESSION[$StoreStack1],$crate);
-			array_push($_SESSION[$StoreStack2],$crate);
+			if($StoreStack1==$StoreStack2){
+				$same = 1;
+			}else{
+				$same = 0;
+			}
+			if(count($_SESSION[$StoreStack1])<$maxStoreSize and count($_SESSION[$StoreStack2])<$maxStoreSize-$same){
+				$crate = array_pop($_SESSION['warehouse']);
+				array_push($_SESSION[$StoreStack1],$crate);
+				array_push($_SESSION[$StoreStack2],$crate);
+			}else{
+				echo "One or more of those stores are full!<br>";
+			}
 			require_once("UI.php");
 		}else{
 			echo "Please select a valid crate.<br>";
 		}
-		echo "</div>";
-		require_once("display.php");
 	}else{
 		//DISPLAY MOVE FORM
 		echo "<form method='post' action='move.php'>";
 		echo "<input type='submit' value='MOVE CRATE' name='submit'><br>";
 		echo "<a href='index.php'>BACK</a>";
-		echo "</div>";
 		$move = True;
-		require_once("display.php");
 	}
-}		
+}else{
+	echo "nothing to move<br>";
+	require_once("UI.php");
+}
+echo "</div>";
+require_once("display.php");		
 require_once("foot.php");
 ?>

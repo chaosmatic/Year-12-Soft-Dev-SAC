@@ -15,8 +15,8 @@ if($_POST['name']==null){
 	//SANITIZE AND VALIDATE
 	$Valid = False;
 	$name = $_POST['name'];
-	$nameSanitized = filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS/*, FILTER_FLAG_STRIP_HIGH*/);
-	$nameSanitized = trim(str_replace(range(0, 9), '', $nameSanitized));
+	$nameSanitized = htmlspecialchars($name);//filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS/*, FILTER_FLAG_STRIP_HIGH*/);
+	//$nameSanitized = trim(str_replace(range(0, 9), '', $nameSanitized));
 	if(strlen($nameSanitized)>0){
 		if($name!=$nameSanitized){
 			echo "Some characters you entered are not allowed by the program and have been removed.<br>";
@@ -29,11 +29,14 @@ if($_POST['name']==null){
 		echo "Crate is invalid.<br>";
 	}
 	//SAVES IF VALID
-	if($Valid){
+	if($Valid and count($_SESSION['warehouse'])<$maxWarehouseSize){
 		array_push($_SESSION['warehouse'], $nameSanitized);
 		require_once("UI.php");
-	}else{
+	}elseif(!$Valid){
 		echo "Crate was invalid, please <a href='add.php'>resubmit.</a><br>";
+	}else{
+		echo "Warehouse stack full<br>";
+		require_once("UI.php");
 	}
 	
 }
