@@ -87,7 +87,7 @@ for ($i=1; $i <= $amountOfStores; $i++) {
 }
 ?>
 /*FORMAT #Warehouse div*/
-#Warehouse {
+#warehouse {
 	width:<?php echo $width; ?>%;
 	position:absolute;
 	bottom:50px;
@@ -101,12 +101,12 @@ table {
 	border-collapse:separate; 
 }
 
-table.StoreTable{
+table.storeTable{
 	border-spacing:2px;
 	padding-left: 1px;
 }
 
-table.WarehouseTable{
+table.warehouseTable{
 	border-spacing:4px;
   padding-left: 1px;
 }
@@ -116,14 +116,14 @@ td {
 	word-wrap:break-word;
 }
 
-td.StoreCell {
+td.storeCell {
 	color: #f0f0f0;
 	background-color: #804000;
 	border: 5px solid #654321;
 	height:40px;
 }
 
-td.WarehouseCell {
+td.warehouseCell {
 	color: #f0f0f0;
 	background-color: #804000;
 	border: 5px solid #654321;
@@ -132,7 +132,7 @@ td.WarehouseCell {
 
 }
 /*STYLE MOVE CRATE OPTION*/
-#AddCrate2 {
+#addCrate2 {
 	color: #9E7D5C;
 	background-color: #F0F0F0;
 	border: 5px solid #8E6D4C;
@@ -140,7 +140,7 @@ td.WarehouseCell {
 	font-size: 95%;
 }
 
-#AddCrate1 {
+#addCrate1 {
 	color: #825E3B;
 	background-color: #F0F0F0;
 	border: 5px solid #724E2B;

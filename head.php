@@ -6,6 +6,5 @@ echo "<div id='container1'>";
 $amountOfStores = 5; //Actual amount of stores
 $maxWarehouseSize = 5; //Vertical limits on stack size
 $maxStoreSize = 10; //Vertical limits on stack size
-$screensize =1024; //WIDTH IN PIXELS
 require_once("style.php");
 ?>

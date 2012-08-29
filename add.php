@@ -13,20 +13,20 @@ if($_POST['name']==null){
 	echo "<a href='index.php'>BACK</a></div>";
 }else{
 	//SANITIZE AND VALIDATE
-	$Valid = False;
+	$valid = False;
 	$name = $_POST['name'];
 	$nameSanitized = htmlspecialchars($name);
 	if(strlen($nameSanitized)>0){
-		$Valid = True;
+		$valid = True;
 		
 	}else{
 		echo "Crate is invalid.<br>";
 	}
 	//SAVES IF VALID
-	if($Valid and count($_SESSION['warehouse'])<$maxWarehouseSize){
+	if($valid and count($_SESSION['warehouse'])<$maxWarehouseSize){
 		array_push($_SESSION['warehouse'], $nameSanitized);
 		require_once("UI.php");
-	}elseif(!$Valid){
+	}elseif(!$valid){
 		echo "Crate was invalid, please <a href='add.php'>resubmit.</a><br>";
 	}else{
 		echo "Warehouse stack full<br>";

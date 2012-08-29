@@ -1,8 +1,8 @@
 <?php //DISPLAYS LINKS
 
 $full = True;
-for ($StoreNumber=1; $StoreNumber <= $amountOfStores; $StoreNumber++) { 
-	if (count($_SESSION['store'.$StoreNumber])<10){
+for ($storeNumber=1; $storeNumber <= $amountOfStores; $storeNumber++) { 
+	if (count($_SESSION['store'.$storeNumber])<10){
 		$full = False;
 	}	
 }

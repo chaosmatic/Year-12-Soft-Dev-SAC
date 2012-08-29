@@ -3,24 +3,24 @@ session_start();
 require_once("head.php");
 echo "<div id='UI'>";
 //SANITIZATION
-$StoreStack1 = filter_var($_POST["StoreStack1"], FILTER_SANITIZE_NUMBER_INT);
-$StoreStack2 = filter_var($_POST["StoreStack2"], FILTER_SANITIZE_NUMBER_INT);
+$storeStack1 = filter_var($_POST["storeStack1"], FILTER_SANITIZE_NUMBER_INT);
+$storeStack2 = filter_var($_POST["storeStack2"], FILTER_SANITIZE_NUMBER_INT);
 
 if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
-	if($StoreStack1 and $StoreStack2){
-		if (filter_var($StoreStack1,FILTER_VALIDATE_INT) && $StoreStack1 > 0 && $StoreStack1 <= $amountOfStores && filter_var($StoreStack2,FILTER_VALIDATE_INT) && $StoreStack2 > 0 && $StoreStack2 <= $amountOfStores){
+	if($storeStack1 and $storeStack2){
+		if (filter_var($storeStack1,FILTER_VALIDATE_INT) && $storeStack1 > 0 && $storeStack1 <= $amountOfStores && filter_var($storeStack2,FILTER_VALIDATE_INT) && $storeStack2 > 0 && $storeStack2 <= $amountOfStores){
 			//MOVE
-			$StoreStack1 = "store".$StoreStack1;
-			$StoreStack2 = "store".$StoreStack2;
-			if($StoreStack1==$StoreStack2){ //FOR VALIDATION PURPOSES
+			$storeStack1 = "store".$storeStack1;
+			$storeStack2 = "store".$storeStack2;
+			if($storeStack1==$storeStack2){ //FOR VALIDATION PURPOSES
 				$same = 1;
 			}else{
 				$same = 0;
 			}
-			if(count($_SESSION[$StoreStack1])<$maxStoreSize and count($_SESSION[$StoreStack2])<$maxStoreSize-$same){
+			if(count($_SESSION[$storeStack1])<$maxStoreSize and count($_SESSION[$storeStack2])<$maxStoreSize-$same){
 				$crate = array_pop($_SESSION['warehouse']);
-				array_push($_SESSION[$StoreStack1],$crate);
-				array_push($_SESSION[$StoreStack2],$crate);
+				array_push($_SESSION[$storeStack1],$crate);
+				array_push($_SESSION[$storeStack2],$crate);
 			}else{
 				echo "One or more of those stores are full!<br>";
 			}

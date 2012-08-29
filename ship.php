@@ -4,13 +4,13 @@ require_once("head.php");
 
 //RM STORE
 echo "<div id='UI'>";
-$StoreNumber = filter_var($_GET["store"], FILTER_SANITIZE_NUMBER_INT);
-if (filter_var($StoreNumber,FILTER_VALIDATE_INT) && $StoreNumber > 0 && $StoreNumber <= $amountOfStores ){
-	unset($_SESSION['store'.$StoreNumber]);
-	$_SESSION['store'.$StoreNumber] = array();
+$storeNumber = filter_var($_GET["store"], FILTER_SANITIZE_NUMBER_INT);
+if (filter_var($storeNumber,FILTER_VALIDATE_INT) && $storeNumber > 0 && $storeNumber <= $amountOfStores ){
+	unset($_SESSION['store'.$storeNumber]);
+	$_SESSION['store'.$storeNumber] = array();
 	require_once("UI.php");
 }else{
-	print "Store ".$StoreNumber." is not a valid store.";
+	print "Store ".$storeNumber." is not a valid store.";
 }
 echo "</div>";
 
