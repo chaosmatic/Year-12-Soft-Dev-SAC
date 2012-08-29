@@ -1,6 +1,39 @@
-<?php
-?>
 <STYLE type="text/css">
+
+a {
+	color: #654321;
+}
+
+a:hover {
+	color: #a06020;
+}
+
+input {
+	width:10em;
+	height: 1.2em;
+	font-size: 1em;
+}
+
+input[type="submit"] {
+width:5em;
+background:#654321;
+background: -webkit-gradient(linear, left top, left bottom, from(#a06020), to(#654321)); /* for webkit browsers */
+background: -moz-linear-gradient(top,  #a06020,  #654321); /* for firefox 3.6+ */ 
+color:#f0f0f0;
+font-family: Tahoma, Geneva, sans-serif;
+height:1.4em;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border: 1p solid #999;
+}
+
+input[type="submit"]:active {
+	background:#a06020;
+	background: -webkit-gradient(linear, left top, left bottom, from(#654321), to(#a06020)); /* for webkit browsers */
+	background: -moz-linear-gradient(top, #654321, #a06020); /* for firefox 3.6+ */ 
+}
+
 html, body {
 	background-color: #f0f0f0;
 	margin: 0;
@@ -8,7 +41,7 @@ html, body {
   font-family: "Verdana"; 
 
 }
-/*debugging*/
+
 #wall {
 	position: absolute;
 	left: 1024px;
@@ -27,9 +60,9 @@ html, body {
 <?php
 
 $tablewidth = 100;
-$width = floor(100/$amountOfStores)-9;
+$width = floor(100/$amountOfStores)-6;#9
 for ($i=1; $i <= $amountOfStores; $i++) {
-	$left =  (floor(100/($amountOfStores)+1))*$i-floor(3.5*$i);
+	$left =  (floor(100/($amountOfStores)-3))*$i;#-floor(3.5*$i);
 	echo "#store";
 	echo $i;
 	echo " {\n";
@@ -44,36 +77,7 @@ for ($i=1; $i <= $amountOfStores; $i++) {
 	echo "overflow:hidden;\n";
 	echo "}\n";
 
-}/*
-#store1 {
-	width:16%;
-	position:absolute;
-	bottom:50px;
-	left:22%;
-	overflow:hidden;
-
 }
-#store2 {
-	width:16%;
-	position:absolute;
-	bottom:50px;
-	left:42%;
-	overflow:hidden;
-}
-#store3 {
-	width:16%;
-	position:absolute;
-	bottom:50px;
-	left:62%;
-	overflow:hidden;
-}
-#store4 {
-	width:16%;
-	position:absolute;
-	bottom:50px;
-	left:82%;
-	overflow:hidden;
-}*/
 ?>
 
 #Warehouse {
@@ -130,7 +134,7 @@ td.WarehouseCell {
 	background-color: #F0F0F0;
 	border: 5px solid #8E6D4C;
 	height:40px;
-	font-size: 65%;
+	font-size: 95%;
 }
 
 #AddCrate1 {
@@ -138,13 +142,15 @@ td.WarehouseCell {
 	background-color: #F0F0F0;
 	border: 5px solid #724E2B;
 	height:40px;
-	font-size: 65%;
+	font-size: 95%;
 }
 
 #UI {
 	clear:both;
-	float:left;
-	width:100%;
-	font-size: 150%;
+	position: absolute;
+	left:2%;
+	top:2%;
+	width:98%;
+	font-size: 170%;
 }
 </STYLE>

@@ -31,7 +31,7 @@ if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
 	}else{
 		//DISPLAY MOVE FORM
 		echo "<form method='post' action='move.php'>";
-		echo "<input type='submit' value='MOVE CRATE' name='submit'><br>";
+		echo "<input type='submit' value='MOVE' name='submit'><br>";
 		echo "<a href='index.php'>BACK</a>";
 		$move = True;
 	}

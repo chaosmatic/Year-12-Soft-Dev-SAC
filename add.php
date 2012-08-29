@@ -8,9 +8,9 @@ if($_POST['name']==null){
 		echo "<b>WARNING: THERE IS ONLY ONE SPACE LEFT ON THE STACK!</b>";
 	}
 	echo "<form method='post' action='add.php'>";
-	echo "Name of crate: <input type='text' size='10' maxlength='9' name='name'><br>";
+	echo "Name of crate: <input type='text' size='14' maxlength='12' name='name'><br>";
 	echo "<input type='submit' value='ADD' name='submit'></form>";
-	echo "<a href='index.php'>BACK</a>";
+	echo "<a href='index.php'>BACK</a></div>";
 }else{
 	//SANITIZE AND VALIDATE
 	$Valid = False;
@@ -18,12 +18,7 @@ if($_POST['name']==null){
 	$nameSanitized = htmlspecialchars($name);//filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS/*, FILTER_FLAG_STRIP_HIGH*/);
 	//$nameSanitized = trim(str_replace(range(0, 9), '', $nameSanitized));
 	if(strlen($nameSanitized)>0){
-		if($name!=$nameSanitized){
-			echo "Some characters you entered are not allowed by the program and have been removed.<br>";
-			$Valid = True;
-		}else{
-			$Valid = True;
-		}
+		$Valid = True;
 		
 	}else{
 		echo "Crate is invalid.<br>";
