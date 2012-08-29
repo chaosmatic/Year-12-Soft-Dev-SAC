@@ -15,8 +15,7 @@ if($_POST['name']==null){
 	//SANITIZE AND VALIDATE
 	$Valid = False;
 	$name = $_POST['name'];
-	$nameSanitized = htmlspecialchars($name);//filter_var($name, FILTER_SANITIZE_SPECIAL_CHARS/*, FILTER_FLAG_STRIP_HIGH*/);
-	//$nameSanitized = trim(str_replace(range(0, 9), '', $nameSanitized));
+	$nameSanitized = htmlspecialchars($name);
 	if(strlen($nameSanitized)>0){
 		$Valid = True;
 		

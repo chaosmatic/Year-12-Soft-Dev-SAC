@@ -12,7 +12,7 @@ if(isset($_SESSION['warehouse']) & count($_SESSION['warehouse'])>0 ){
 			//MOVE
 			$StoreStack1 = "store".$StoreStack1;
 			$StoreStack2 = "store".$StoreStack2;
-			if($StoreStack1==$StoreStack2){
+			if($StoreStack1==$StoreStack2){ //FOR VALIDATION PURPOSES
 				$same = 1;
 			}else{
 				$same = 0;

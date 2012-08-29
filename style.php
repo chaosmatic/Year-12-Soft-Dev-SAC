@@ -1,5 +1,5 @@
 <STYLE type="text/css">
-
+/*STYLE OF HTML ELEMENTS*/
 a {
 	color: #654321;
 }
@@ -8,6 +8,17 @@ a:hover {
 	color: #a06020;
 }
 
+html, body {
+	background-color: #f0f0f0;
+	margin: 0;
+	padding: 0;
+  font-family: "Verdana"; 
+}
+
+p {
+	font-size: 150%;
+}
+/*STYLING OF FORM*/
 input {
 	width:10em;
 	height: 1.2em;
@@ -34,18 +45,9 @@ input[type="submit"]:active {
 	background: -moz-linear-gradient(top, #654321, #a06020); /* for firefox 3.6+ */ 
 }
 
-html, body {
-	background-color: #f0f0f0;
-	margin: 0;
-	padding: 0;
-  font-family: "Verdana"; 
-}
 
-p {
-	font-size: 150%;
-}
 
-/*
+/* USED FOR DEBUGGING SCREEN SIZE
 #wall {
 	position: absolute;
 	left: 1024px;
@@ -54,6 +56,7 @@ p {
 	background-color: #000;
 }
 */
+/*WRAPPER FOR ALL DIVS*/
 #container1 {
 	float:left;
 	width:100%;
@@ -83,7 +86,7 @@ for ($i=1; $i <= $amountOfStores; $i++) {
 
 }
 ?>
-
+/*FORMAT #Warehouse div*/
 #Warehouse {
 	width:<?php echo $width; ?>%;
 	position:absolute;
@@ -91,13 +94,7 @@ for ($i=1; $i <= $amountOfStores; $i++) {
 	left:2%;
 	overflow:hidden;
 }
-
-#WarehouseCell {
-  overflow: wrap;
-	font-size: 280%;
- 	word-wrap:break-word;
-}
-
+/*FORMATTING TABLES*/
 table {
 	width:<?php echo $tablewidth; ?>%;
 	table-layout:fixed;
@@ -131,8 +128,10 @@ td.WarehouseCell {
 	background-color: #804000;
 	border: 5px solid #654321;
 	height:80px;
-}
+	overflow: wrap;
 
+}
+/*STYLE MOVE CRATE OPTION*/
 #AddCrate2 {
 	color: #9E7D5C;
 	background-color: #F0F0F0;
@@ -153,7 +152,6 @@ td.WarehouseCell {
 	clear:both;
 	position: absolute;
 	left:2%;
-	top:2%;
 	width:98%;
 	font-size: 170%;
 }
