@@ -18,4 +18,5 @@ if(count($_SESSION['warehouse'])<$maxWarehouseSize){
 if($full and count($_SESSION['warehouse'])>=$maxWarehouseSize){
 	echo "Empty some of the Store Stacks.<br>";
 }
+echo "<br><a href='tips.php'>User Guide</a>";
 ?>

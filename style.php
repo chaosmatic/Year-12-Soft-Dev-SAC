@@ -15,17 +15,17 @@ input {
 }
 
 input[type="submit"] {
-width:5em;
-background:#654321;
-background: -webkit-gradient(linear, left top, left bottom, from(#a06020), to(#654321)); /* for webkit browsers */
-background: -moz-linear-gradient(top,  #a06020,  #654321); /* for firefox 3.6+ */ 
-color:#f0f0f0;
-font-family: Tahoma, Geneva, sans-serif;
-height:1.4em;
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
-border: 1p solid #999;
+	width:5em;
+	background:#654321;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a06020), to(#654321)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  #a06020,  #654321); /* for firefox 3.6+ */ 
+	color:#f0f0f0;
+	font-family: Tahoma, Geneva, sans-serif;
+	height:1.4em;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	border: 1p solid #999;
 }
 
 input[type="submit"]:active {
@@ -39,9 +39,13 @@ html, body {
 	margin: 0;
 	padding: 0;
   font-family: "Verdana"; 
-
 }
 
+p {
+	font-size: 150%;
+}
+
+/*
 #wall {
 	position: absolute;
 	left: 1024px;
@@ -49,7 +53,7 @@ html, body {
 	height: 760px;
 	background-color: #000;
 }
-
+*/
 #container1 {
 	float:left;
 	width:100%;
@@ -58,11 +62,11 @@ html, body {
 }
 
 <?php
-
+//generates #store div css
 $tablewidth = 100;
-$width = floor(100/$amountOfStores)-6;#9
+$width = floor(100/$amountOfStores)-6;
 for ($i=1; $i <= $amountOfStores; $i++) {
-	$left =  (floor(100/($amountOfStores)-3))*$i;#-floor(3.5*$i);
+	$left =  (floor(100/($amountOfStores)-3))*$i;
 	echo "#store";
 	echo $i;
 	echo " {\n";
